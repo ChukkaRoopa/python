@@ -125,4 +125,44 @@ x = [lambda arg = y: arg* 10 for y in range(1, 5)]
 for i in x:
     print(i())
 
-# 
+# lambda with if-else
+max = lambda a, b : a if (a>b) else b
+print("lambda with if-else: ",max(6,11))
+
+# lambda with multiple statements
+# find the second largest element in each sub list
+List = [[2,3,4], [1, 4, 16, 64], [3, 6, 9, 12]]
+
+sorted_list = lambda x: (sorted(i) for i in x)
+second_largest = lambda x, f : [y[len(y) - 2 ] for y in f(x)]
+print(second_largest(List, sorted_list))
+
+# lambda with filter() function
+# filter() syntax - filter(function, iterable)
+List = [2, 45, 67, 68, 9, 57, 63, 30, 6, 71, 37]
+
+oddNum = list(filter(lambda x: (x % 2 != 0), List))
+print(oddNum)
+
+# filter the people having more than 18 years age
+Age = [24, 23, 67, 14, 25, 23, 12, 2, 5]
+
+greater_age = list(filter(lambda x : x > 18, Age))
+print(greater_age)
+
+# lambda with map() function
+List = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+table_5 = list(map(lambda x: x*5, List))
+print(table_5)
+
+# lambda with reduce() function
+from functools import reduce
+List = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+sum = reduce((lambda x, y : x + y), List)
+print(sum)
+
+# find max using reduce()
+maximum = reduce((lambda x, y: x if x > y else y), List)
+print(maximum)
