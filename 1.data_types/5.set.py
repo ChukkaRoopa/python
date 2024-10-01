@@ -67,3 +67,10 @@ print("after poping: ", set1)
 # clear() - removes all the elements
 set1.clear()
 print('removes all the elements: ', set1)
+
+# frozen set() - they are immutable. elements of a set are modified, but elements of a frozen set cannot be modified once created.
+print("Empty frozen set: ", frozenset())
+
+# create a frozen set
+string = "Roopa"
+print("Create a frozen set: ", frozenset(string))
